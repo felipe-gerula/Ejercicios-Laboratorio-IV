@@ -38,7 +38,7 @@
 
         //Set
         public function setUserName($userName){
-            $this->name = $userName;
+            $this->userName = $userName;
         }
 
         public function setPassword($password){

@@ -9,6 +9,6 @@
      <link rel="stylesheet" href="css/bootstrap.min.css">
      <link rel="stylesheet" href="css/estilos.css">
 
-     <title>Template Base</title>
+     <title>Login User</title>
 </head>
 <body>
