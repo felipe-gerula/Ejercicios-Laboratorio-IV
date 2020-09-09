@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="baseStyle.css">
+</head>
+
+<body>
+    <form action="action.php" method="post">
+        <h1>Contact Form</h1>
+        <ul>
+            <li>
+                <h2 class="">Your Basic Information</h2>
+                <p>
+                    <label>Name</label><br>
+                    <input type="text" name="name" required>
+                </p>
+                <p>
+                    <label>Mail</label><br>
+                    <input type="email" name="mail" required>
+                </p>
+                <p>
+                    <label>Password</label><br>
+                    <input type="password" name="password" required>
+                </p>
+                <p>
+                    <label>Birthday</label><br>
+                    <input type="date" name="birthday" required>
+                </p>
+                <p>
+                    <label>Sex:</label>
+                    <input type="radio" id="male" name="gender" value="male" class="gender">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female" class="gender">
+                    <label for="male">Female</label>
+                </p>
+            </li>
+            <li>
+                <h2>Your Profile</h2>
+                <p>
+                    <label>About You</label><br>
+                    <textarea name="aboutyou"rows="5" cols="55"></textarea>
+                </p>
+                <p>
+                    <label>Role</label><br>
+                    <select name="select">
+                        <option value="frontenddeveloper">Front End Developer</option> 
+                        <option value="backenddeveloper" selected>Back End Developer</option>
+                        <option value="fullstackdeveloper">Full Stack Developer</option>
+                    </select>
+                </p>
+                <p>
+                    <label>Interests</label><br>
+                    <input type="checkbox" class="interest" name="DataBase">Data Base
+                    <input type="checkbox" class="interest" name="interest_design">Design
+                    <input type="checkbox" class="interest" name="interest_business">Business
+                    <input type="checkbox" class="interest" name="interest_unitTest">Unit Test <br>
+                    <input type="checkbox" class="interest" name="interest_cloudDevelopment">Cloud Development
+                    <input type="checkbox" class="interest" name="interest_webDevelopment">Web Development
+                </p>
+                <button type="submit">Send</button>
+                <button type="reset">Reset</button>
+            </li>
+        </ul>
+    </form>
+</body>
+
+</html>

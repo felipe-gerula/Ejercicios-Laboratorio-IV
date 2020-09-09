@@ -1,0 +1,149 @@
+*{/*Reset*/
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+body{
+    font-family: 'Roboto', sans-serif;
+    color: yellow;
+    background-color: black;
+}
+
+h1{
+    padding-left: 40%;
+    text-decoration: underline;
+    padding-bottom:20px ;
+}
+
+.titulo-h2{
+    padding-left: 44%;
+    text-decoration: underline;
+    padding-bottom:20px ;
+}
+.titulo-h3{
+    padding-left: 45%;
+    text-decoration: underline;
+    padding-bottom:20px ;
+}
+
+.header-title{
+    font-size: 30px;
+    width: 45%;
+   margin: left;
+   padding: 10px;
+   border: 3px solid yellow;
+   border-radius: 20px;
+   margin-bottom: 20px;
+}
+
+.nav-top{
+    width: 35%;
+   margin: auto;
+   padding: 20px;
+   border: 3px solid yellow;
+   border-radius: 20px;
+   margin-bottom: 20px;
+   align-items: center;
+}
+
+ul{
+    display: flex; 
+    list-style: none;
+}
+
+
+ul li {
+    padding: 10px;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+ul li a:hover{
+    border: 2px solid orange;
+}
+
+.btn{
+    cursor : pointer;
+    display: inline-block;
+    border: 0;
+    font-weight: bold;
+    padding: 10px 20px;
+    background: #262626;
+    color: white;
+    font-size: 15px;
+    border: 1px solid white;
+    margin : 10px 0;
+    border-radius: 5px;
+}
+
+.text-temas{
+    padding: 20px;
+    font-size: 20px;
+}
+
+.div-h1{
+    margin: auto;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom:10px ;
+    align-items: center;
+    margin: center;
+    border: 3px groove yellow;
+}
+
+.parrafo-central{
+    font-size: 20px;
+}
+
+.lista-h1{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    padding: 20px;
+}
+
+.div-h2{
+    margin: auto;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom:10px ;
+    align-items: center;
+    margin: center;
+    border: 3px groove yellow;
+    border-top: 30px;
+}
+
+.div-h3{
+    margin: auto;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom:10px ;
+    align-items: center;
+    margin: center;
+    border: 3px groove yellow;
+    border-top: 30px;
+}
+
+.div-temas-h{
+    padding-bottom: 40px;
+}
+
+.div-temas-a{
+    border: 3px groove yellow;
+}
+
+.titulo-a{
+    padding-left: 45%;
+    text-decoration: underline;
+    padding-bottom:20px ;
+    font-size: 25px;
+}
+
+.texto-footer{
+    color: white;
+    padding-left:40%;
+    padding-top: 20px ;
+}
