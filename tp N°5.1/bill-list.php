@@ -1,6 +1,17 @@
 <?php
 include('header.php');
 include('nav.php');
+
+use Config\Autoload as Autoload;
+
+use Models\Bill as Bill;
+use Models\Item as Item;
+use Repository\BillRepository as BillRepository;
+
+Autoload::Start();
+$billRepository = new BillRepository();   
+
+$billList = $billRepository->getAll();
 ?>
 <main class="py-5">
      
@@ -15,24 +26,27 @@ include('nav.php');
                          <th>Importe</th>
                     </thead>
                     <tbody>
-                         <tr>
-                              <td>x</td>
-                              <td>x</td>
-                              <td>x</td>
-                              <td>x</td>
-                         </tr>
-                         <tr>
-                              <td>x</td>
-                              <td>x</td>
-                              <td>x</td>
-                              <td>x</td>
-                         </tr>
-                         <tr>
-                              <td>x</td>
-                              <td>x</td>
-                              <td>x</td>
-                              <td>x</td>
-                         </tr>
+                         <form action="Process/removeBill.php" method="POST">
+                         <?php
+                              $totalAmount = 0.0;
+                              if (isset($billList) && !empty($billList)) {
+                                   foreach($billList as $bill){
+                              ?>          
+                                   <tr>
+                                        <td><?php echo $bill->getBillDate(); ?></td>
+                                        <td><?php echo $bill->getBillType(); ?></td>
+                                        <td><?php echo $bill->getBillNumber(); ?></td>
+                                        <td><?php echo $bill->totalCost(); ?></td>
+                                        <td>
+                                             <button type="submit" name="btnRemove" class="btn btn-danger" value="<?php echo $bill->getBillType(). '-' .$bill->getBillNumber();?>">Eliminar</button>
+                                        </td>
+                                   </tr>
+                                  <?php
+                                  $totalAmount += $bill->totalCost();
+                                   }
+                              }
+                           ?>       
+                         </form>
                     </tbody>
                </table>
           </div>
@@ -44,7 +58,7 @@ include('nav.php');
                     <div class="col-lg-3">
                          <div class="form-group text-white">
                               <label for="" class="ml-1"><b>IMPORTE TOTAL FACTURADO</b></label>
-                              <input type="text" value="" class="form-control ml-1 text-strong" disabled>
+                              <input type="text" value="<?php echo $totalAmount;?>" class="form-control ml-1 text-strong" disabled>
                          </div>
                     </div>
                </div>

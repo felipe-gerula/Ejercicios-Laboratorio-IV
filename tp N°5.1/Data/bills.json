@@ -1,0 +1,20 @@
+[
+    {
+        "billDate": "2020-09-04",
+        "billType": "B",
+        "billNumber": "3123123",
+        "items": []
+    },
+    {
+        "billDate": "2020-09-04",
+        "billType": "B",
+        "billNumber": "4234234",
+        "items": []
+    },
+    {
+        "billDate": "2020-09-03",
+        "billType": "B",
+        "billNumber": "53453",
+        "items": []
+    }
+]

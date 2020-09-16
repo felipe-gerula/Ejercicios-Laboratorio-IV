@@ -1,23 +1,23 @@
-<?php
+<?php 
 
-    namespace Models;
+	namespace Models;
 
-    use Models\Item as Item;
+use Models\Item as Item;
+	
+class Bill
+{	
+	//Atributes
+	private $billDate;
+	private $billNumber;
+	private $billType;
+	private $items;
 
-    class Bill{
+	//Constructor
+	public function __construct(){
+		$this->items = array();
+	}
 
-    //Atributes
-        private $billDate;
-        private $billNumber;
-        private $billType;
-        private $items;
-
-    //constructor
-        public function __construct(){
-            $this->items = array();
-        }
-
-   //Access Properties
+	//Access Properties
 	public function getBillDate(){
 		return $this->billDate;
 	}
@@ -50,16 +50,16 @@
 		if(isset($item)){
 			array_push($this->items, $item);
 		}
-    }
-    
-    //Methods
-        function totalCost(){
-            $total = 0.0;
-            foreach ($this->getItemList() as $item) {
-                $total += $item->getSubTotal();
-            }
-            return $total;
-        }    
-    }
+	}
+
+	//Methods
+	function totalCost(){
+		$total = 0.0;
+		foreach ($this->getItemList() as $item) {
+			$total += $item->getSubTotal();
+		}
+		return $total;
+	}
+}
 
 ?>

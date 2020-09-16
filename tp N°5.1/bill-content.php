@@ -1,6 +1,16 @@
 <?php
 include('header.php');
 include('nav.php');
+
+include_once("Process/billContentProcess.php");
+
+use Config\Autoload as Autoload;
+use Models\Bill as Bill;
+use Models\Item as Item;
+use Repository\BillRepository as BillRepository;
+
+Autoload::Start(); 
+
 ?>
 <main class="py-5">
      <div class="container">
@@ -10,17 +20,17 @@ include('nav.php');
                <div class="row">
                     <div class="col-lg-3">
                          <label for="">Fecha</label>
-                         <input type="date" class="form-control form-control-ml" disabled value="">
+                         <input type="date" class="form-control form-control-ml" disabled value="<?php echo $newBill->getBillDate(); ?>">
                     </div>
 
                     <div class="col-lg-3">
                          <label for="">Tipo</label>
-                         <input type="text" class="form-control form-control-ml" disabled value="">
+                         <input type="text" class="form-control form-control-ml" disabled value="<?php echo $newBill->getBillType(); ?>">
                     </div>
 
                     <div class="col-lg-3">
                          <label for="">Numero</label>
-                         <input type="number" class="form-control form-control-ml" disabled value="">
+                         <input type="number" class="form-control form-control-ml" disabled value="<?php echo $newBill->getBillNumber(); ?>">
                     </div>
                </div>
      </div><br>
@@ -71,27 +81,20 @@ include('nav.php');
                          <th>Sub-total</th>
                     </thead>
                     <tbody>
-                         <tr>
-                              <td>x</td>
-                              <td>x</td>
-                              <td>x</td>
-                              <td>x</td>
-                              <td>x</td>
-                         </tr>
-                         <tr>
-                              <td>x</td>
-                              <td>x</td>
-                              <td>x</td>
-                              <td>x</td>
-                              <td>x</td>
-                         </tr>
-                         <tr>
-                              <td>x</td>
-                              <td>x</td>
-                              <td>x</td>
-                              <td>x</td>
-                              <td>x</td>
-                         </tr>
+                         <?php
+                              if (isset($newBill) && !empty($newBill->getItemList())) {
+                                   foreach ($newBill->getItemList as $item) {
+                              ?>
+                              <tr>
+                                   <td><?php echo $item->getName(); ?></td>
+                                   <td><?php echo $item->getDescription();?></td>
+                                   <td><?php echo $item->getPrice();?></td>
+                                   <td><?php echo $item->getQuantity();?></td>
+                              </tr>
+                         <?php
+                              }
+                         }
+                       ?>       
                     </tbody>
                </table>
           </div>
