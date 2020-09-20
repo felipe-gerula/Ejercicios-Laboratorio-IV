@@ -38,7 +38,7 @@ Autoload::Start();
      <div class="container">
           <h2 class="mb-4">Agregar Item a Factura</h2>
 
-          <form class="bg-light-alpha p-3">
+          <form class="bg-light-alpha p-3" action="?" method="POST">
                <div class="row">
                     <div class="col-lg-4">
                          <div class="form-group">
@@ -83,7 +83,7 @@ Autoload::Start();
                     <tbody>
                          <?php
                               if (isset($newBill) && !empty($newBill->getItemList())) {
-                                   foreach ($newBill->getItemList as $item) {
+                                   foreach ($newBill->getItemList() as $item) {
                               ?>
                               <tr>
                                    <td><?php echo $item->getName(); ?></td>
@@ -106,11 +106,11 @@ Autoload::Start();
                     <div class="col-lg-4">
                          <div class="form-group text-white">
                               <label for="" class="ml-1"><b>IMPORTE TOTAL A FACTURAR</b></label>
-                              <input type="text" value="" class="form-control ml-1 text-strong" disabled>
+                              <input type="text" value="<?php echo $newBill->totalCost(); ?>" class="form-control ml-1 text-strong" disabled>
                          </div>
                     </div>
                     <div class="form-group">
-                         <button type="button" class="btn-fix btn btn-danger mt-3" onclick="" >Procesar Factura</button>
+                         <button type="button" class="btn-fix btn btn-danger mt-3" onclick="location.href='bill-list.php';" >Procesar Factura</button>
                     </div>
                </div>
           </div>

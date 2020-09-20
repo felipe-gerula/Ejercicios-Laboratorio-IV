@@ -121,9 +121,7 @@ class BillRepository implements IBillRepository{
             $bill->setBillType($valuesArray["billType"]);
             $bill->setBillNumber($valuesArray["billNumber"]);
 
-                foreach($valuesArray["items"] as $key => $value){
-                    if ($value != null) {
-                        var_dump($value);
+                foreach($valuesArray["items"] as $itemValue){
                         $item = new Item();
                         $item->setName($itemValue["name"]);
                         $item->setDescription($itemValue["description"]);
@@ -131,7 +129,6 @@ class BillRepository implements IBillRepository{
                         $item->setPrice($itemValue["price"]);
         
                         $bill->pushItem($item);
-                    }
                 }
 
             array_push($this->billList, $bill);

@@ -1,20 +1,15 @@
 [
     {
-        "billDate": "2020-09-04",
+        "billDate": "2020-09-02",
         "billType": "B",
-        "billNumber": "3123123",
-        "items": []
-    },
-    {
-        "billDate": "2020-09-04",
-        "billType": "B",
-        "billNumber": "4234234",
-        "items": []
-    },
-    {
-        "billDate": "2020-09-03",
-        "billType": "B",
-        "billNumber": "53453",
-        "items": []
+        "billNumber": "2312",
+        "items": [
+            {
+                "name": "pan",
+                "description": "panificado",
+                "quantity": "3",
+                "price": "12"
+            }
+        ]
     }
 ]
