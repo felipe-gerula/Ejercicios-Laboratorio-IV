@@ -17,24 +17,40 @@
             $this->SaveData();
         }
 
+        /*public function array_sort_by($array,$col,$order=SORT_ASC)
+        {
+            $arrAux = array();
+            foreach ($array as $key=> $row)
+                {
+                    $arrAux[$key] = is_object($row) ? $arrAux[$key] = $row->$col : $row[$col];
+                    $arrAux[$key] = strtolower($arrAux[$key]);
+                }
+            array_multisort($arrAux, $order, $array);
+            
+            return $array;
+        }*/
+        
+    
         public function GetAll(){
             $this->RetrieveData();
+            uasort($this->clientList,function($a, $b) {
+                 $c = intval($a->GetBusinnesName());
+                 $d = intval($b->GetBusinnesName());
+                 return $c- $d;
+            });    
             return $this->clientList;
         }
 
         public function GetClient($clientCuit, $clientEmail){
-        $this->RetrieveData();
-        $clientExists = null;
-
-        foreach($this->clientList as $client){
-            if(($client->GetCuit() == $clientCuit) && ($client->GetEmail() == $clientEmail)){
-                $clientExists = $client;
-            }
+            $this->RetrieveData();
+            $clientExists = null;
+                foreach($this->clientList as $client){
+                    if(($client->GetCuit() == $clientCuit) && ($client->GetEmail() == $clientEmail)){
+                        $clientExists = $client;
+                    }
+                }
+            return $clientExists;
         }
-        
-        return $clientExists;
-        }
-
 
         //JSON Persistence
         private function SaveData(){

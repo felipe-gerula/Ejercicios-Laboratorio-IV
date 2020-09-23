@@ -41,7 +41,7 @@ class BillRepository implements IBillRepository{
         foreach($this->billList as $billValue){
 
             if($billValue->getBillNumber() == $billNumber && $billValue->getBillType() == trim($billType)){
-                $key = array_search($billValue, $this->billList); //usca un valor determinado en un array y devuelve la primera clave correspondiente en caso de éxito
+                $key = array_search($billValue, $this->billList); //busca un valor determinado en un array y devuelve la primera clave correspondiente en caso de éxito
                 unset($this->billList[$key]);//Destruye una variable especificada
             }
         }
@@ -52,7 +52,6 @@ class BillRepository implements IBillRepository{
     public function GetAll()
     {
         $this->RetrieveData();
-
         return $this->billList;
     }
 
