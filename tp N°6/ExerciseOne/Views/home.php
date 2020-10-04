@@ -16,11 +16,11 @@
     </nav> -->
   </header>
 </div>
-<div class="wrapper row2 bgded" style="background-image:url('../images/demo/backgrounds/1.png');">
+<div class="wrapper row2 bgded" style="background-image:url('./Views/img/cool.jpg');">
   <div class="overlay">
     <div id="breadcrumb" class="clear"> 
       <ul>
-        <li><a href="#">WELLCOME</a></li>
+        <li><a href="#">WELCOME</a></li>
       </ul>
     </div>
   </div>
@@ -31,10 +31,24 @@
     <h1 class="text-login">LOGIN TO MANAGE</h1>
 </div>
   <div class="div-login">  
-    <form action="#" method="">
-        <input class="input-login" type="text" name="" placeholder="Nombre Usuario" required>
-        <input class="input-login" type="password" name="" placeholder="Contraseña" required >
-        <button class="btn-login btn" type="submit" name="">Ingresar</button>
+    <form action="<?php echo FRONT_ROOT."Home/Login" ?>" method="post">
+        <input class="input-login" type="text" name="username" placeholder="Nombre Usuario" required>
+        <input class="input-login" type="password" name="password" placeholder="Contraseña" required>
+        <button class="btn-login btn" type="submit" name="btnLogin">Ingresar</button>
       </form>
   </div>
 </div>
+
+
+
+
+
+
+<?php 
+if(isset($message))
+{
+?>
+<div class="alert alert-danger" role="alert">
+<?php echo $message?>
+</div>
+<?php }  ?>
