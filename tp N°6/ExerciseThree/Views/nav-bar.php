@@ -14,7 +14,7 @@
   <div class="wrapper row1">
     <header id="header" class="hoc clear"> 
       <div id="logo" class="fl_left">
-        <h1><a href="#">Cervezas Artesanales</a></h1>
+        <h1><a href="<?php echo FRONT_ROOT ?>">Cervezas Artesanales</a></h1>
       </div>
       <!-- Add path routes below -->
       <nav id="mainav" class="fl_right">
@@ -22,14 +22,14 @@
             <li class="active"><a href="<?php echo FRONT_ROOT ?>">Menu Principal</a></li>
             <li><a class="drop" href="#">Cervezas</a>
               <ul>
-                <li><a href="">Agregar</a></li>
-                <li><a href="">Ver Listado</a></li>
+                <li><a href="<?php echo FRONT_ROOT."Beer/ShowAddView" ?>">Agregar</a></li>
+                <li><a href="<?php echo FRONT_ROOT."Beer/ShowListView"?>">Ver Listado</a></li>
               </ul>
             </li>
             <li><a class="drop" href="#">Tipos de Cervezas</a>
               <ul>
-                <li><a href="">Agregar</a></li>
-                <li><a href="">Ver Listado</a></li>
+                <li><a href="<?php echo FRONT_ROOT."BeerType/ShowAddView"?>">Agregar</a></li>
+                <li><a href="<?php echo FRONT_ROOT."BeerType/ShowListView"?>">Ver Listado</a></li>
               </ul>
             </li>
         </ul>

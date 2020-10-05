@@ -14,30 +14,22 @@ include_once('nav-bar.php');
     <div class="content" > 
       <div id="comments" style="align-items:center;">
         <h2>Ingresar Tipo de Cerveza</h2>
-        <form action="" method="post"  style="background-color: #EAEDED;padding: 2rem !important;">
+        <form action="<?php echo FRONT_ROOT."BeerType/Add"?>" method="post"  style="background-color: #EAEDED;padding: 2rem !important;">
           <table> 
             <thead>
               <tr>
-                <th>Codigo</th>
                 <th>Nombre</th>
                 <th>Descripción</th>
-                <th>Receta</th>
               </tr>
             </thead>
             <tbody align="center">
               <tr>
-                <td style="max-width: 100px;">
-                  <input type="number" name="" min="1" max="999" size="10" required>
+                <td>
+                  <input type="text" name="name" size="22" required>
                 </td>
                 <td>
-                  <input type="text" name="" value="" size="22" required>
-                </td>
-                <td>
-                  <textarea name="" id="" cols="50" rows="1" required></textarea>
-                </td>     
-                <td>
-                  <textarea name="" id="" cols="50" rows="1"></textarea>
-                </td>         
+                  <textarea name="description" id="" cols="50" rows="1" required></textarea>
+                </td>             
               </tr>
               </tbody>
           </table>

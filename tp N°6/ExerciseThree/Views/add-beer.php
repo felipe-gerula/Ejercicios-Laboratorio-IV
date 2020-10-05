@@ -14,7 +14,7 @@
     <div class="content" > 
       <div id="comments" style="align-items:center;">
         <h2>Ingresar Cerveza</h2>
-        <form action="" method="post" style="background-color: #EAEDED;padding: 2rem !important;">
+        <form action="<?php echo FRONT_ROOT."Beer/Add"?>" method="post" style="background-color: #EAEDED;padding: 2rem !important;">
           <table> 
             <thead>
               <tr>
@@ -23,38 +23,36 @@
                 <th>Tipo</th>
                 <th>Descripcion</th>
                 <th>Dens. Alcohol</th>
-                <th>Origen</th>
                 <th>Precio $ </th>
               </tr>
             </thead>
             <tbody align="center">
               <tr>
                 <td style="max-width: 120px;">    
-                  <input type="number" name="" size="22" min="0" required>
+                  <input type="number" name="code" size="22" min="0" required>
                 </td>
                 <td>
-                  <input type="text" name="" size="22" required>
+                  <input type="text" name="name" size="22" required>
                 </td>
                 <td>
-                  <select name="" style="margin-top: 3%;min-height: 35px;height: 20px" required>
-                    <option value="">Rubia</option>
-                    <option value="">Negra</option>
-                    <option value="">Roja</option>
-                    <option value="">Ipa</option>                    
-                    <option value="">Etc</option>                    
+                  <select name="beerTypeId" style="margin-top: 3%;min-height: 35px;height: 20px" required>
+                    <?php
+                      foreach ($beerTypeList as $beerType) {
+                        ?>
+                        <option value="<?php echo $beerType->getId() ?>"><?php echo $beerType->getName() ?></option>
+                      <?php
+                      }
+                    ?>
                   </select>
                 </td>
                 <td>
-                  <textarea name="" cols="60" rows="1"></textarea>
+                  <textarea name="description" cols="60" rows="1"></textarea>
                 </td>
                 <td>
-                  <input type="number" name="" min="0" style="max-width: 120px" required>
+                  <input type="number" name="density" min="0" style="max-width: 120px" required>
                 </td>
                 <td>
-                  <input type="text" name="" required>
-                </td>
-                <td>
-                  <input type="number" name="" min="0" style="max-width: 120px" required>
+                  <input type="text" name="price" required>
                 </td>            
               </tr>
               </tbody>

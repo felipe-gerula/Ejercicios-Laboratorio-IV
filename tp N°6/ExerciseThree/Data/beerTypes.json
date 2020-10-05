@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "name": "ipa",
+        "description": "intensa"
+    },
+    {
+        "id": 2,
+        "name": "lager",
+        "description": "acentunada"
+    },
+    {
+        "id": 3,
+        "name": "porter",
+        "description": "negra"
+    }
+]

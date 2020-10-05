@@ -21,41 +21,28 @@
                 <th style="width: 120px;">Tipo</th>
                 <th style="width: 400px;">Descripcion</th>
                 <th style="width: 110px;">Dens. Alcohol</th>
-                <th style="width: 130px;">Origen</th>
                 <th style="width: 120px;">Precio $ </th>
               </tr>
             </thead>
             <tbody>
-             <tr>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-              </tr>
-              <tr>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-              </tr>
-              <tr>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-              </tr>
+            <?php
+                foreach($beerList as $beer)
+                {
+                  ?>
+                    <tr>
+                      <td><?php echo $beer->getCode() ?></td>
+                      <td><?php echo $beer->getName() ?></td>
+                      <td><?php echo $beer->getBeerType()->getName() ?></td>
+                      <td><?php echo $beer->getDescription() ?></td>
+                      <td><?php echo $beer->getDensity() ?></td>
+                      <td><?php echo $beer->getPrice() ?></td>
+                    </tr>
+                  <?php
+                }
+              ?>
             </tbody>
           </table>
-          <form action="" method="">
+          <form action="<?php echo FRONT_ROOT."Beer/Remove" ?>" method="post">
             <table style="max-width: 35%;" >
             <thead>
               <tr>
@@ -66,7 +53,7 @@
             <tbody align=center>
               <tr>
                 <td>
-                  <input type="number" name="" style="height: 40px;" min="0">  
+                  <input type="number" name="code" style="height: 40px;" min="0">  
                 </td>
                 <td>
                   <button type="submit" class="btn" href="" value="">Remover</button>

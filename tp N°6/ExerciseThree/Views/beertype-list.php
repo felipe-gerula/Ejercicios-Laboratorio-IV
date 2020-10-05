@@ -13,25 +13,28 @@ include_once('nav-bar.php');
     <!-- main body -->
     <div class="content"> 
       <div class="scrollable">
-      <form action="" method="">
+      <form action="<?php echo FRONT_ROOT."BeerType/Remove" ?>" method="post">
         <table style="text-align:center;">
           <thead>
             <tr>
-              <th style="width: 100px;">Codigo</th>
               <th style="width: 150px;">Nombre</th>
               <th style="width: 450px;">Descripción</th>
-              <th style="width: 450px;">Receta</th>
               <th style="width: 100px;">Eliminar</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-            <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td><button type="submit" class="btn" href="" value="">Eliminar</button></td>
-            </tr>
+            <?php
+                foreach($beerTypeList as $beerType)
+                {
+                  ?>
+                    <tr>
+                      <td><?php echo $beerType->getName() ?></td>
+                      <td><?php echo $beerType->getDescription() ?></td>
+                      <td><button type="submit" name="id" class="btn" value="<?php echo $beerType->getId() ?>">Eliminar</button></td>
+                    </tr>
+                  <?php
+                }
+              ?>   
           </tbody>
         </table>
       </form> 

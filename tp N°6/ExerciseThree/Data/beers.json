@@ -1,0 +1,20 @@
+[
+    {
+        "id": 2,
+        "beerTypeId": "1",
+        "code": "1",
+        "name": "session",
+        "description": "intensa con frutas",
+        "density": "6",
+        "price": "220"
+    },
+    {
+        "id": 3,
+        "beerTypeId": "3",
+        "code": "10",
+        "name": "porter ibe\u00f1a",
+        "description": "negra con cafe",
+        "density": "6",
+        "price": "190"
+    }
+]
