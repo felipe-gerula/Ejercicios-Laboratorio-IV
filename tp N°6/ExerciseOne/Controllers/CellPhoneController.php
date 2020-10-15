@@ -39,7 +39,7 @@
 
             $this->cellPhoneDAO->Add($cellPhone);//Llama a la funcion del DAO que añade los celulares nuevos
 
-            $this->ShowListView();//llama a la function para mostrar la vista de añadir un celular nuevo
+            $this->ShowListView();//llama a la function para mostrar la vista de lista
         }
 
         public function Remove($id)//Recibe el Id del celular a eliminar y lo elimina

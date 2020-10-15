@@ -44,13 +44,13 @@
                 $beer->setBeerType($beerType);
              }
 
-             require_once(VIEWS_PATH."beer-list.php");
+             require_once(VIEWS_PATH."beer-list.php");  
         }
 
         public function Add($code, $name, $beerTypeId, $description, $density, $price)
         {
             $beerType = new BeerType();
-            $beerType->setId($beerTypeId);
+            $beerType->setId($beerTypeId);  
                         
             $beer = new Beer();
             $beer->setBeerType($beerType);

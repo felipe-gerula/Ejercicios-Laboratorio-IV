@@ -49,7 +49,8 @@
               }
               ?>   
           </tbody>
-        </table></form> 
+        </table>
+      </form> 
       </div>
     </div>
     <!-- / main body -->
